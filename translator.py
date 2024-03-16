@@ -139,9 +139,9 @@ class translator:
             elif type == "column" or type == "row":
                 
                 if prompt:
-                    translated_result = self.df.iloc[idx].applymap(lambda cell_value:self.translate(cell_value,prompt))
+                    translated_result = self.df.iloc[idx].map(lambda cell_value:self.translate(cell_value,prompt))
                 else:
-                    translated_result = self.df.iloc[idx].applymap(self.translate)
+                    translated_result = self.df.iloc[idx].map(self.translate)
                 if type !="row":
                     translated_result.columns = [f"translated_{col}" for col in translated_result.columns]
                 combined_data = pd.concat([self.df.iloc[idx], translated_result], axis=axis)
@@ -149,9 +149,9 @@ class translator:
 
             elif type == "sheet":
                 if prompt:
-                    translated_result = self.df.iloc[idx].applymap(lambda cell_value:self.translate(cell_value,prompt))
+                    translated_result = self.df.iloc[idx].map(lambda cell_value:self.translate(cell_value,prompt))
                 else:
-                    translated_result = self.df.iloc[idx].applymap(self.translate)
+                    translated_result = self.df.iloc[idx].map(self.translate)
 
             translated_df.iloc[idx] = translated_result
 
