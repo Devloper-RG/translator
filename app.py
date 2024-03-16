@@ -3,6 +3,7 @@ import translator as t
 from translator import translator as class_translator
 import pandas as pd
 from io import BytesIO
+from xlsxwriter import Workbook
 
 # Initialize session state variables
 if 'dataframes' not in st.session_state:
