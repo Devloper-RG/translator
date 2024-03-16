@@ -49,7 +49,7 @@ class translator:
                 "threshold": "BLOCK_NONE",
             },
         ]
-        self.model = genai.GenerativeModel('gemini-1.0-pro-latest', safety_settings = safety_settings)
+        self.model = genai.GenerativeModel('gemini-1.0-pro-latest')
 
 
     def translate(self,cell_value,prompt=None):
