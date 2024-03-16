@@ -21,10 +21,10 @@ st.title("Translator")
 file = st.file_uploader("Upload Excel",type='xlsx')
 
 if st.toggle("New prompt"):
-    st.session_state.prompt = st.text_area("Prompt",placeholder="Type",height=100)
+    st.session_state.prompt = st.text_area("Prompt",placeholder="Please refer to data as context",height=100)
 
 else:
-    st.session_state.language = st.selectbox("Select Language to translate In",options=['Hindi','Bengali','Marathi','Tamil','Malyalam'])
+    st.session_state.language = st.selectbox("Select Language to translate In",options=['Hindi','Bengali'])
     st.session_state.add_on_prompt = st.multiselect("Select add on for prompt",options=['Easy to understand','3-5 word summary in English after each point.'])
 
 class_translator.language = st.session_state.language
